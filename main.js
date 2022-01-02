@@ -1,10 +1,10 @@
 import './style.css';
 
-import * as THREE from '../3Dresume/node_modules/three/src/Three';
+import * as THREE from 'three';
 
 import { OrbitControls } from './OrbitControls.js';
 
-import { TextureLoader } from '../3Dresume/node_modules/three/src/Three';
+import { TextureLoader } from 'three';
 
 const scene = new THREE.Scene();
 

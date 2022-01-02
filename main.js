@@ -1,6 +1,6 @@
 import './style.css';
 
-import * as THREE from '../node_modules/three/build/three.module.js';
+import * as THREE from '../3Dresume/node_modules/three/src/Three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { TextureLoader } from 'three';

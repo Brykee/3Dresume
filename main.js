@@ -2,7 +2,7 @@ import './style.css';
 
 import * as THREE from '../3Dresume/node_modules/three/src/Three';
 
-import { OrbitControls } from '../3Dresume/vendor_mods/three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from './OrbitControls.js';
 
 import { TextureLoader } from '../3Dresume/node_modules/three/src/Three';
 

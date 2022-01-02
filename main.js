@@ -3,7 +3,7 @@ import './style.css';
 import * as THREE from '../3Dresume/node_modules/three/src/Three';
 
 import { OrbitControls } from '../3Dresume/vendor_mods/three/examples/jsm/controls/OrbitControls.js';
-import { TextureLoader } from 'three';
+import { TextureLoader } from '../3Dresume/node_modules/three/src/Three';
 
 const scene = new THREE.Scene();
 

@@ -1,5 +1,46 @@
 @import url('https://use.typekit.net/jmk3xov.css');
 
+html {
+  background-color: black;
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (max-width: 1000px) {
+  img {
+    max-width: 500px;
+    height: auto;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+  main {
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  img {
+    max-width: 180%;
+    height: auto;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
 canvas {
   position: fixed;
   top: 0;

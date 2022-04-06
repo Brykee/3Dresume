@@ -1,12 +1,10 @@
-import './style.css';
+import "./style.css";
 
-import * as THREE from 'three';
+import * as THREE from "three";
 
-import { OrbitControls } from './OrbitControls.js';
+import { OrbitControls } from "./OrbitControls.js";
 
-import { TextureLoader } from 'three';
-
-import { ImageLoader } from 'three';
+import { TextureLoader } from "three";
 
 const scene = new THREE.Scene();
 
@@ -18,7 +16,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#bg'),
+  canvas: document.querySelector("#bg"),
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -68,12 +66,12 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-import space from '/textures/space.jpg';
+import space from "/textures/space.jpg";
 const spaceTexture = new THREE.TextureLoader().load(space);
 scene.background = spaceTexture;
 
 //Avatar
-import brykee from '/textures/DevenRichardson.jpg';
+import brykee from "/textures/DevenRichardson.jpg";
 const bryceTexture = new TextureLoader().load(brykee);
 
 const bryce = new THREE.Mesh(
@@ -84,9 +82,9 @@ const bryce = new THREE.Mesh(
 scene.add(bryce);
 
 //Moon
-import moonPic from '/textures/moon.jpg';
+import moonPic from "/textures/moon.jpg";
 const moonTexture = new THREE.TextureLoader().load(moonPic);
-import normalPic from '/textures/normal.jpg';
+import normalPic from "/textures/normal.jpg";
 const normalTexture = new THREE.TextureLoader().load(normalPic);
 
 const moon = new THREE.Mesh(
@@ -98,11 +96,31 @@ scene.add(moon);
 moon.position.z = 30;
 moon.position.setX(10);
 
+//Cheese Planet
+import cheesePic from "/textures/cheese-hole-background.jpg";
+const cheesePlanet = new THREE.TextureLoader().load(cheesePic);
+
+const cheese = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: cheesePlanet,
+    normalMap: normalTexture,
+  })
+);
+scene.add(cheese);
+
+cheese.position.z = 50;
+cheese.position.setX(-10);
+
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
+
+  cheese.rotation.x += 0.05;
+  cheese.rotation.y += 0.075;
+  cheese.rotation.z += 0.05;
 
   bryce.rotation.y += 0.01;
   bryce.rotation.z += 0.01;
